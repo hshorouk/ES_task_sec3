@@ -1,0 +1,13 @@
+(defrule check_animal
+   ?f <- (animal ?type)
+   (test (and (neq ?type dog) (neq ?type cat)))
+   =>
+   (printout t "Animal type: " ?type crlf))
+
+(assert (animal cow))
+(assert (animal dog))
+(assert (animal elephant))
+
+(run) ; 
+
+(exit)
